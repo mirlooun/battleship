@@ -1,0 +1,128 @@
+﻿@page
+@using DAL.DAL.Entities.Enums
+@model WebApplication.Pages.Game.PlayBattleship
+
+<div id="gameContainer">
+    <div id="boardsContainer">
+        <div class="div-table">
+            @{
+                string GetDisplaySymbol(ECellState cellState, bool shipVisibility)
+                {
+                    string displaySign = cellState switch
+                    {
+                        ECellState.Empty => " ",
+                        ECellState.Miss => "X",
+                        ECellState.Hit => "@",
+                        ECellState.Ship => shipVisibility ? "S" : " ",
+                        _ => ""
+                        };
+                    return displaySign;
+                }
+
+                var (enemyBoard, attackerBoard) = Model.GameEngine!.GetBoards();
+
+                var width = Model.GameSettings!.FieldWidth; //x-axis
+                var height = Model.GameSettings.FieldHeight; //y-axis
+
+                <div class="div-table-row">
+                    <div class="div-table-col bg-transparent border-0">
+                    </div>
+                    @for (var colIndex = 0; colIndex < width; colIndex++)
+                    {
+                        <div class="div-table-col bg-transparent border-0" style="color: white">@((char)(65 + colIndex))</div>
+                    }
+                </div>
+                for (var rowIndex = 0; rowIndex < height; rowIndex++)
+                {
+                    <div class="div-table-row">
+                        <div class="div-table-col bg-transparent border-0" style="color: white">
+                            @(rowIndex + 1)
+                        </div>
+                        @for (var colIndex = 0; colIndex < width; colIndex++)
+                        {
+                            var symbol = enemyBoard[colIndex, rowIndex];
+                            switch (symbol)
+                            {
+                                case ECellState.Hit:
+                                    <div class="div-table-col" style="color: indianred">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                case ECellState.Ship:
+                                    <div class="div-table-col">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                case ECellState.Miss:
+                                    <div class="div-table-col" style="color: white">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                case ECellState.Empty:
+                                    <div class="div-table-col">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                default:
+                                    throw new ArgumentOutOfRangeException();
+                            }
+                        }
+                    </div>
+                }
+                <p style="font-weight: normal">Enemy @Model.GameEngine.GetCurrentEnemyName() board</p>
+            }
+        </div>
+        <div class="div-table">
+            @{
+                <div class="div-table-row">
+                    <div class="div-table-col bg-transparent border-0">
+                    </div>
+                    @for (var colIndex = 0; colIndex < width; colIndex++)
+                    {
+                        <div class="div-table-col bg-transparent border-0" style="color: white">@((char)(65 + colIndex))</div>
+                    }
+                </div>
+                for (var rowIndex = 0; rowIndex < height; rowIndex++)
+                {
+                    <div class="div-table-row">
+                        <div class="div-table-col bg-transparent border-0" style="color: white">
+                            @(rowIndex + 1)
+                        </div>
+                        @for (var colIndex = 0; colIndex < width; colIndex++)
+                        {
+                            var symbol = attackerBoard[colIndex, rowIndex];
+                            switch (symbol)
+                            {
+                                case ECellState.Hit:
+                                    <div class="div-table-col" style="color: indianred">@GetDisplaySymbol(symbol, true)</div>
+                                    break;
+                                case ECellState.Ship:
+                                    <div class="div-table-col">@GetDisplaySymbol(symbol, true)</div>
+                                    break;
+                                case ECellState.Miss:
+                                    <div class="div-table-col" style="color: white">@GetDisplaySymbol(symbol, true)</div>
+                                    break;
+                                case ECellState.Empty:
+                                    <div class="div-table-col">@GetDisplaySymbol(symbol, true)</div>
+                                    break;
+                                default:
+                                    throw new ArgumentOutOfRangeException();
+                            }
+                        }
+                    </div>
+                }
+            }
+            <p style="font-weight: normal">Your board</p>
+        </div>
+    </div>
+    <h3>Player @Model.GameEngine.GetCurrentAttackerName() move</h3>
+    <div id="selection-box" style="display: flex; justify-content: space-around">
+        <form name="hit" id="hit" asp-page-handler="hit">
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId" name="SessionId">
+            <button type="submit" form="hit" class="btn btn-primary">
+                Make a hit
+            </button>
+        </form>
+        <form name="revert" id="revert" asp-page-handler="revert">
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId" name="SessionId">
+            <button type="submit" form="revert" class="btn btn-primary">
+                Revert a move
+            </button>
+        </form>
+        <a asp-page="Index" class="btn btn-primary">
+            Back to main menu
+        </a>
+    </div>
+</div>

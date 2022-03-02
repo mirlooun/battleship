@@ -1,0 +1,34 @@
+﻿@page
+@model WebApplication.Pages.Game.RevertAHit
+
+<div id="gameContainer" style="position: relative">
+    <h1>List of hit records</h1>
+    <ol class="list-group list-group-numbered">
+        @{
+            if (Model.HitHistory.Count == 0)
+            {
+                <div class="alert-info">
+                    <h2>There are currently no hit records.</h2>
+                </div>
+            }
+            else
+            {
+                foreach (var hitRecord in Model.HitHistory)
+                {
+                    <li class="list-group-item">
+                        @{
+                            var index = Model.HitHistory.IndexOf(hitRecord);
+                        }
+                        <a class="table-row" asp-route-SessionId="@Model.SessionId" asp-route-HitRecordIndex="@index">
+                            <span class="badge badge-pill badge-secondary">@hitRecord.Info</span>
+                        </a>
+
+                    </li>
+                }
+            }
+        }
+        <a class="btn btn-primary" style="position: absolute; bottom: 5%; right: 11%; width: 80%" asp-page="./PlayBattleship" asp-route-SessionId="@Model.SessionId">
+            Back
+        </a>
+    </ol>
+</div>

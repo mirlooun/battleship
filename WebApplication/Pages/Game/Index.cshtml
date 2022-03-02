@@ -1,0 +1,57 @@
+﻿@page
+@using DAL.Utils
+@using DAL.DAL.Entities.Enums.Rules
+@model WebApplication.Pages.Game.Index
+
+<div id="gameContainer">
+    @{
+        var foo = 100;}
+    @(foo + 10)
+    <div id="main-menu">
+        <div id="upper-section">
+            <h1>Battleship game</h1>
+        </div>
+        <div id="left-section">
+            <button type="submit" form="settings">
+                Start new game
+            </button>
+            <button type="submit" form="load">
+                Load game
+            </button>
+        </div>
+        <div id="right-section">
+            <form name="settings" id="settings" asp-page-handler="create">
+                <legend>Settings</legend>
+                <label for="field-height">Board height</label>
+                <select asp-for="@Model.GameSettings.FieldHeight" id="field-height">
+                    @for (var i = Model.GameSettings.FieldHeight; i <= 20; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+                <label for="field-width">Board width</label>
+                <select asp-for="@Model.GameSettings.FieldWidth" id="field-width">
+                    @for (var i = Model.GameSettings.FieldWidth; i <= 20; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+                <label for="boats-can-touch-rule">Boats can touch</label>
+                <select asp-for="@Model.GameSettings.BoatsCanTouch" id="boats-can-touch-rule">
+                    @foreach (var rule in Enum.GetValues<EBoatsCanTouch>())
+                    {
+                        <option value="@rule">@GameRuleProvider.GetUiName(rule)</option>
+                    }
+                </select>
+                <label for="hit-continues-move-rule">Hit continues a move</label>
+                <select asp-for="@Model.GameSettings.HitContinuousMove" id="hit-continues-move-rule">
+                    @foreach (var rule in Enum.GetValues<EHitContinuousMove>())
+                    {
+                        <option value="@rule">@GameRuleProvider.GetUiName(rule)</option>
+                    }
+                </select>
+            </form>
+            <form name="load" id="load" asp-page-handler="load" type="hidden"></form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@page
+@model WebApplication.Pages.Game.LoadSession
+
+<div id="gameContainer">
+    <h1>List of sessions</h1>
+    <ul class="list-group">
+        @{
+            if (Model.Sessions.Count == 0)
+            {
+                <div class="alert-info">
+                    <h2>There are currently no active game sessions.</h2>
+                </div>
+            }
+            else
+            {
+                foreach (var session in Model.Sessions)
+                {
+                    <li class="list-group-item">
+                        <a class="table-row" asp-page="./PlayBattleship" asp-route-SessionId="@session.Id">
+                            @{
+                                if (session.IsFinished)
+                                {
+                                    <span class="badge badge-pill badge-success">Finished</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-pill badge-secondary">In progress</span>
+                                }
+                            }
+                            <span>@session.Name</span>
+                        </a>
+                    </li>
+                }
+            }
+        }
+    </ul>
+    <a asp-page="Index" class="btn btn-primary">
+        Back to main menu
+    </a>
+</div>

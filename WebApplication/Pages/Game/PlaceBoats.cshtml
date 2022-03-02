@@ -1,0 +1,74 @@
+﻿@page
+@using DAL.DAL.Entities.Enums
+@using DAL.DAL.Entities
+@using DAL.Utils
+@model WebApplication.Pages.Game.PlaceBoats
+
+<div id="gameContainer">
+    <div class="div-table">
+        @{
+            string GetDisplaySymbol(ECellState eCellState)
+            {
+                return eCellState == ECellState.Empty ? " " : "S";
+            }
+
+            var width = Model.PlayerCurrentBoardState.GetUpperBound(0) + 1; //x-axis
+            var height = Model.PlayerCurrentBoardState.GetUpperBound(1) + 1; //y-axis
+
+
+            <div class="div-table-row">
+                <div class="div-table-col bg-transparent border-0">
+
+                </div>
+                @for (var colIndex = 0; colIndex < width; colIndex++)
+                {
+                    <div class="div-table-col bg-transparent border-0" style="color: white">@((char)(65 + colIndex))</div>
+                }
+            </div>
+
+            for (var rowIndex = 0; rowIndex < height; rowIndex++)
+            {
+                <div class="div-table-row">
+                    <div class="div-table-col bg-transparent border-0" style="color: white">
+                        @(rowIndex + 1)
+                    </div>
+                    @for (var colIndex = 0; colIndex < width; colIndex++)
+                    {
+                        <div class="div-table-col">
+                            @GetDisplaySymbol(Model.PlayerCurrentBoardState[colIndex, rowIndex])
+                        </div>
+                    }
+                </div>
+            }
+        }
+    </div>
+    <div style="height: 20%;">
+        <form method="post">
+            <div>
+                <p>Player @(!Model.Player1Completed ? Model.PlayerNames!.Value.p1 : Model.PlayerNames!.Value.p2) places boats</p>
+                <p>Choose a boat you want to place</p>
+            </div>
+            <div style="display: inline-block">
+                <select asp-for="@Model.BoatType">
+                    @foreach (var (key, value) in Model.RemainingBoatCount)
+                    {
+                        <option value="@key">@BoatTypeProvider.GetUiName(key) x@(value)</option>
+                    }
+                </select>
+            </div>
+            <div style="display: inline-block">
+                <button type="submit" class="btn btn-primary">Choose</button>
+            </div>
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId" name="SessionId">
+        </form>
+        @if (Model.Messages.Count > 0)
+        {
+            foreach (var message in Model.Messages)
+            {
+                <div class="alert alert-danger">
+                    <span>@message</span>
+                </div>
+            }
+        }
+    </div>
+</div>

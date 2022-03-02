@@ -1,0 +1,295 @@
+{
+  "Players": [
+    {
+      "Name": "Il",
+      "Boats": [
+        {
+          "Type": 0,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 0,
+              "Y": 0,
+              "PointState": 2
+            },
+            {
+              "Id": null,
+              "X": 1,
+              "Y": 0,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 2,
+              "Y": 0,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 3,
+              "Y": 0,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 4,
+              "Y": 0,
+              "PointState": 1
+            }
+          ]
+        },
+        {
+          "Type": 2,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 0,
+              "Y": 2,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 1,
+              "Y": 2,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 2,
+              "Y": 2,
+              "PointState": 1
+            }
+          ]
+        },
+        {
+          "Type": 3,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 0,
+              "Y": 4,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 1,
+              "Y": 4,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 2,
+              "Y": 4,
+              "PointState": 1
+            }
+          ]
+        },
+        {
+          "Type": 4,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 6,
+              "Y": 1,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 6,
+              "Y": 2,
+              "PointState": 1
+            }
+          ]
+        }
+      ],
+      "MadeHits": [
+        {
+          "Id": null,
+          "X": 0,
+          "Y": 7,
+          "PointState": 3
+        },
+        {
+          "Id": null,
+          "X": 0,
+          "Y": 2,
+          "PointState": 3
+        },
+        {
+          "Id": null,
+          "X": 0,
+          "Y": 0,
+          "PointState": 2
+        },
+        {
+          "Id": null,
+          "X": 1,
+          "Y": 0,
+          "PointState": 2
+        },
+        {
+          "Id": null,
+          "X": 1,
+          "Y": 1,
+          "PointState": 3
+        }
+      ]
+    },
+    {
+      "Name": "An",
+      "Boats": [
+        {
+          "Type": 0,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 0,
+              "Y": 0,
+              "PointState": 2
+            },
+            {
+              "Id": null,
+              "X": 1,
+              "Y": 0,
+              "PointState": 2
+            },
+            {
+              "Id": null,
+              "X": 2,
+              "Y": 0,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 3,
+              "Y": 0,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 4,
+              "Y": 0,
+              "PointState": 1
+            }
+          ]
+        },
+        {
+          "Type": 2,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 1,
+              "Y": 2,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 1,
+              "Y": 3,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 1,
+              "Y": 4,
+              "PointState": 1
+            }
+          ]
+        },
+        {
+          "Type": 3,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 9,
+              "Y": 2,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 9,
+              "Y": 3,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 9,
+              "Y": 4,
+              "PointState": 1
+            }
+          ]
+        },
+        {
+          "Type": 4,
+          "Locations": [
+            {
+              "Id": null,
+              "X": 6,
+              "Y": 3,
+              "PointState": 1
+            },
+            {
+              "Id": null,
+              "X": 6,
+              "Y": 4,
+              "PointState": 1
+            }
+          ]
+        }
+      ],
+      "MadeHits": [
+        {
+          "Id": null,
+          "X": 0,
+          "Y": 5,
+          "PointState": 3
+        },
+        {
+          "Id": null,
+          "X": 2,
+          "Y": 1,
+          "PointState": 3
+        },
+        {
+          "Id": null,
+          "X": 0,
+          "Y": 0,
+          "PointState": 2
+        },
+        {
+          "Id": null,
+          "X": 0,
+          "Y": 3,
+          "PointState": 3
+        }
+      ]
+    }
+  ],
+  "GameSettings": {
+    "FieldHeight": 10,
+    "FieldWidth": 10,
+    "BoatsCanTouch": 1,
+    "HitContinuousMove": 0,
+    "BoatsConfig": [
+      {
+        "BoatType": 0,
+        "BoatCount": 1
+      },
+      {
+        "BoatType": 2,
+        "BoatCount": 1
+      },
+      {
+        "BoatType": 3,
+        "BoatCount": 1
+      },
+      {
+        "BoatType": 4,
+        "BoatCount": 1
+      }
+    ]
+  },
+  "SessionId": null,
+  "SaveFilePath": "C:\\Users\\mirlo\\RiderProjects\\C#\\icd0008-2021f\\Battleship\\Application\\bin\\Debug\\net5.0\\Saves\\p1=Il_p2=An_save_04-11-2021_13-37-53.json",
+  "NextMoveByFirst": true
+}

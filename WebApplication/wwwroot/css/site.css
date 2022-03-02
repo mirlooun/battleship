@@ -1,0 +1,202 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: lightblue;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Game css */
+
+#gameContainer {
+    margin: 10px auto;
+    padding: 10px;
+    width: max-content;
+    min-width: 43em;
+    height: max-content;
+    min-height: 50em;
+    
+    border: blue 10px solid;
+    border-block-style: inset;
+
+    color: white;
+    background-color: #00AAFF;
+}
+
+/* Main menu */
+
+#main-menu {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#upper-section {
+    text-align: center;
+    text-decoration-line: underline;
+    flex: 0 1 100%;
+    margin: 6em auto;
+}
+
+#left-section, #right-section {
+    display: inherit;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+}
+
+#left-section, #right-section > form {
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#right-section {
+    border: blue 2px dashed;
+}
+
+#left-section button {
+    padding: 10px;
+    margin: 10px;
+    -webkit-filter: brightness(100%);
+    border-radius: 20px;
+    border-style: none;
+    background-color: white;
+}
+
+#left-section > button:hover {
+    -webkit-filter: brightness(85%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* Main menu */
+
+.div-table {
+    display: table;
+    width: max-content;
+    margin: 10px 10px;
+    padding: 0 1em 1em 0;
+    
+    border-spacing: 10px; /* cellspacing:poor IE support for  this */
+    border-radius: 1rem;
+
+    background-color: #4773aa;
+    font-weight: bold;
+}
+
+.div-table-row {
+    display: table-row;
+    clear: both;
+}
+
+.div-table-col {
+    float: left;
+    display: flex;
+    margin: 1px;
+    border: 3px darkblue solid;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+
+    color: lightgreen;
+    background-color: #205493;
+}
+
+#selection-box{
+    margin: 10px;
+}
+
+#selection-box button{
+    border: 2px black solid;
+}
+
+#boardsContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+#boardsContainer p {
+    color: white;
+}
+
+ol li.list-group-item {
+    color: black;
+    list-style: decimal inside;
+    display: list-item;
+}

@@ -1,0 +1,85 @@
+﻿@page
+@using DAL.DAL.Entities.Enums
+@model WebApplication.Pages.Game.PlaceSingleBoat
+
+<div id="gameContainer">
+    <div class="div-table">
+        @{
+            string GetDisplaySymbol(ECellState eCellState)
+            {
+                return eCellState == ECellState.Empty ? " " : "S";
+            }
+
+            var width = Model.PlayerCurrentBoardState!.GetUpperBound(0) + 1; //x-axis
+            var height = Model.PlayerCurrentBoardState.GetUpperBound(1) + 1; //y-axis
+
+
+            <div class="div-table-row">
+                <div class="div-table-col bg-transparent border-0">
+
+                </div>
+                @for (var colIndex = 0; colIndex < width; colIndex++)
+                {
+                    <div class="div-table-col bg-transparent border-0" style="color: white">@((char)(65 + colIndex))</div>
+                }
+            </div>
+
+            for (var rowIndex = 0; rowIndex < height; rowIndex++)
+            {
+                <div class="div-table-row">
+                    <div class="div-table-col bg-transparent border-0" style="color: white">
+                        @(rowIndex + 1)
+                    </div>
+                    @for (var colIndex = 0; colIndex < width; colIndex++)
+                    {
+                        if (Model.PreliminaryBoat!.IsLocatedHere(colIndex, rowIndex))
+                        {
+                            <div class="div-table-col" style="color: yellow">
+                                S
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="div-table-col">
+                                @GetDisplaySymbol(Model.PlayerCurrentBoardState[colIndex, rowIndex])
+                            </div>
+                        }
+                    }
+                </div>
+            }
+        }
+    </div>
+    <div id="selection-box">
+        <form id="move" asp-page-handler="move" class="form-group">
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId">
+            <input type="hidden" asp-for="Player1Completed" value="@Model.Player1Completed">
+            <input type="hidden" asp-for="Player2Completed" value="@Model.Player2Completed">
+            <input type="hidden" asp-for="Boat" value="@Model.Boat">
+            <select asp-for="Direction">
+                <!option value="up" @(Model.PreviousMoveDirection.Equals("up") ? "selected" : "")>↑</!option>
+                <!option value="down" @(Model.PreviousMoveDirection.Equals("down") ? "selected" : "")>↓</!option>
+                <!option value="left" @(Model.PreviousMoveDirection.Equals("left") ? "selected" : "")>←</!option>
+                <!option value="right" @(Model.PreviousMoveDirection.Equals("right") ? "selected" : "")>→</!option>
+                <!option value="rotate" @(Model.PreviousMoveDirection.Equals("rotate") ? "selected" : "")>Rotate</!option>
+            </select>
+            <button type="submit" class="btn btn-info">Move</button>
+            <button class="btn btn-primary m-auto" form="place">Place</button>
+        </form>
+        <form id="place" asp-page-handler="submit">
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId">
+            <input type="hidden" asp-for="Player1Completed" value="@Model.Player1Completed">
+            <input type="hidden" asp-for="Player2Completed" value="@Model.Player2Completed">
+            <input type="hidden" asp-for="Boat" value="@Model.Boat">
+            <input type="hidden" asp-for="Direction" value="@Model.Direction">
+        </form>
+        @if (Model.Messages.Count > 0)
+        {
+            foreach (var message in Model.Messages)
+            {
+                <div class="alert alert-danger">
+                    <span>@message</span>
+                </div>
+            }
+        }
+    </div>
+</div>

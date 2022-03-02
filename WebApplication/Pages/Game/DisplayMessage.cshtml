@@ -1,0 +1,43 @@
+﻿@page
+@model WebApplication.Pages.Game.DisplayMessage
+
+
+<div id="gameContainer">
+    @if (Model.Messages.Count > 0)
+    {
+        foreach (var message in Model.Messages)
+        {
+            @if (Model.GameIsFinished.HasValue)
+            {
+                <div class="alert alert-success">
+                    <span>@message</span>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-secondary">
+                    <span>@message</span>
+                </div>
+            }
+        }
+    }
+
+    @if (Model.GameIsFinished.HasValue)
+    {
+        <a asp-page="LoadSession" class="btn btn-primary">
+            Back to load game page
+        </a>
+    }
+    else
+    {
+        <div id="selection-box">
+            <form id="continue" asp-page-handler="continue">
+                <input type="hidden" asp-for="SessionId" value="@Model.SessionId">
+                <input type="hidden" asp-for="JsonHitResponse" value="@Model.JsonHitResponse">
+                <input type="hidden" asp-for="JsonHit" value="@Model.JsonHit">
+                <input type="hidden" asp-for="PreviousMoveDirection" value="@Model.PreviousMoveDirection">
+                <button type="submit" class="btn btn-primary">Continue</button>
+            </form>
+        </div>
+    }
+</div>

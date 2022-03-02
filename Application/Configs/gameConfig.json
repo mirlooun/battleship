@@ -1,0 +1,30 @@
+{
+  "FieldHeight": 10,
+  "FieldWidth": 10,
+  "BoatsCanTouch": 1,
+  "HitContinuousMove": 0,
+  "SavingMethod": 1,
+  "BoatsConfig": [
+    {
+      "BoatType": 0,
+      "BoatCount": 1
+    },
+    {
+      "BoatType": 1,
+      "BoatCount": 1
+    },
+    {
+      "BoatType": 2,
+      "BoatCount": 1
+    },
+    {
+      "BoatType": 3,
+      "BoatCount": 1
+    },
+    {
+      "BoatType": 4,
+      "BoatCount": 1
+    }
+  ],
+  "ThemeColor": 0
+}

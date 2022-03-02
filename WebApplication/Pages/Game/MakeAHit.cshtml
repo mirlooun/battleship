@@ -1,0 +1,92 @@
+﻿@page
+@using DAL.DAL.Entities.Enums
+@model WebApplication.Pages.Game.MakeAHit
+
+<div id="gameContainer">
+    <div class="div-table">
+        @{
+            string GetDisplaySymbol(ECellState cellState, bool shipVisibility)
+            {
+                string displaySign = cellState switch
+                {
+                    ECellState.Empty => " ",
+                    ECellState.Miss => "X",
+                    ECellState.Hit => "@",
+                    ECellState.Ship => shipVisibility ? "S" : " ",
+                    _ => ""
+                    };
+                return displaySign;
+            }
+
+            var width = Model.GameSettings.FieldWidth; //x-axis
+            var height = Model.GameSettings.FieldHeight; //y-axis
+
+            var board = Model.GameEngine.GetCurrentEnemyBoardState();
+
+            for (var rowIndex = 0; rowIndex < height; rowIndex++)
+            {
+                <div class="div-table-row">
+                    @for (var colIndex = 0; colIndex < width; colIndex++)
+                    {
+                        if (Model.Hit.X.Equals(colIndex) && Model.Hit.Y.Equals(rowIndex))
+                        {
+                            <div class="div-table-col">*</div>
+                        }
+                        else
+                        {
+                            var symbol = board[colIndex, rowIndex];
+                            switch (symbol)
+                            {
+                                case ECellState.Hit:
+                                    <div class="div-table-col" style="color: indianred">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                case ECellState.Ship:
+                                    <div class="div-table-col">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                case ECellState.Miss:
+                                    <div class="div-table-col" style="color: white">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                case ECellState.Empty:
+                                    <div class="div-table-col">@GetDisplaySymbol(symbol, false)</div>
+                                    break;
+                                default:
+                                    throw new ArgumentOutOfRangeException();
+                            }
+                        }
+                    }
+                </div>
+            }
+        }
+    </div>
+    <div id="selection-box">
+        <form id="move" asp-page-handler="change" class="form-group">
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId">
+            <input type="hidden" asp-for="JsonHit" value="@Model.JsonHit">
+            <input type="hidden" asp-for="JsonGameEngine" value="@Model.JsonGameEngine">
+            <select asp-for="Direction">
+                <!option value="up" @(Model.PreviousMoveDirection.Equals("up") ? "selected" : "")>↑</!option>
+                <!option value="down" @(Model.PreviousMoveDirection.Equals("down") ? "selected" : "")>↓</!option>
+                <!option value="left" @(Model.PreviousMoveDirection.Equals("left") ? "selected" : "")>←</!option>
+                <!option value="right" @(Model.PreviousMoveDirection.Equals("right") ? "selected" : "")>→</!option>
+            </select>
+            <button type="submit" class="btn btn-info" form="move">Move</button>
+            <button type="submit" class="btn btn-primary m-auto" form="hit">Make a hit</button>
+        </form>
+        <form id="hit" asp-page-handler="hit">
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId">
+            <input type="hidden" asp-for="JsonHit" value="@Model.JsonHit">
+            <input type="hidden" asp-for="JsonGameEngine" value="@Model.JsonGameEngine">
+            <input type="hidden" asp-for="PreviousMoveDirection" value="@Model.PreviousMoveDirection">
+        </form>
+    </div>
+    <legend>
+        <span>* - is your hit</span>
+        <span>@Html.Raw("@") - is damaged ship</span>
+        <span>X - is miss</span>
+    </legend>
+    <div style="height: 20%;">
+        <form asp-page-handler="hit">
+            <input type="hidden" asp-for="SessionId" value="@Model.SessionId" name="SessionId">
+        </form>
+    </div>
+</div>

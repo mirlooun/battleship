@@ -1,0 +1,296 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\DAL\\DAL.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Menu\\Contracts.Menu.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Menu\\Contracts.Menu.csproj",
+        "projectName": "Contracts.Menu",
+        "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Menu\\Contracts.Menu.csproj",
+        "packagesPath": "C:\\Users\\mirlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Menu\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mirlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Validator\\Contracts.Validator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Validator\\Contracts.Validator.csproj",
+        "projectName": "Contracts.Validator",
+        "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Validator\\Contracts.Validator.csproj",
+        "packagesPath": "C:\\Users\\mirlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Validator\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mirlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\mirlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mirlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Validator\\Contracts.Validator.csproj": {
+                "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Validator\\Contracts.Validator.csproj"
+              },
+              "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Menu\\Menu.csproj": {
+                "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Menu\\Menu.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\mirlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mirlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Menu\\Menu.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Menu\\Menu.csproj",
+        "projectName": "Menu",
+        "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Menu\\Menu.csproj",
+        "packagesPath": "C:\\Users\\mirlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Menu\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mirlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Menu\\Contracts.Menu.csproj": {
+                "projectPath": "C:\\Users\\mirlo\\WebstormProjects\\autloprojects\\Battleship\\Contracts.Menu\\Contracts.Menu.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

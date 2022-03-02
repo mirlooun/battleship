@@ -1,0 +1,86 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "InitMenu/1.0.0": {
+        "dependencies": {
+          "Battleship": "1.0.0",
+          "Helpers": "1.0.0",
+          "Menu": "1.0.0"
+        },
+        "runtime": {
+          "InitMenu.dll": {}
+        }
+      },
+      "Battleship/1.0.0": {
+        "dependencies": {
+          "Contracts.Validator": "1.0.0",
+          "Menu": "1.0.0"
+        },
+        "runtime": {
+          "Battleship.dll": {}
+        }
+      },
+      "Contracts.Menu/1.0.0": {
+        "runtime": {
+          "Contracts.Menu.dll": {}
+        }
+      },
+      "Contracts.Validator/1.0.0": {
+        "runtime": {
+          "Contracts.Validator.dll": {}
+        }
+      },
+      "Helpers/1.0.0": {
+        "runtime": {
+          "Helpers.dll": {}
+        }
+      },
+      "Menu/1.0.0": {
+        "dependencies": {
+          "Contracts.Menu": "1.0.0",
+          "Helpers": "1.0.0"
+        },
+        "runtime": {
+          "Menu.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "InitMenu/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Battleship/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Contracts.Menu/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Contracts.Validator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Menu/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
